@@ -5,18 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-        <img id="rock" class="choices" src="assets/images/rock.png" alt="rock">
-        <img id="paper" class="choices" src="assets/images/paper.png" alt="paper">
-        <img id="scissors" class="choices" src="assets/images/scissors.png" alt="scissors">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h1 class="display-4">Rock, Paper, Scissors</h1>
+                    <p class="lead">Try your hand.</p>
+                    <hr class="my-4">
+                    <p id="instructions">Press any key to get started!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 d-flex justify-content-start">
+                <img id="myRock" class="choices flipped" src="assets/images/rock.png" alt="rock">
+                <img id="myPaper" class="choices flipped" src="assets/images/paper.png" alt="paper">
+                <img id="myScissors" class="choices flipped" src="assets/images/scissors.png" alt="scissors">
+            </div>
+            <div class="col-lg-4 d-flex justify-content-end">
+                <img id="rock" class="choices" src="assets/images/rock.png" alt="rock">
+                <img id="paper" class="choices" src="assets/images/paper.png" alt="paper">
+                <img id="scissors" class="choices" src="assets/images/scissors.png" alt="scissors">
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">Wins: <span id="wins">0</span></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">Losses: <span id="losses">0</span></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">Ties: <span id="ties">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <img id="myRock" class="choices flipped" src="assets/images/rock.png" alt="rock">
-        <img id="myPaper" class="choices flipped" src="assets/images/paper.png" alt="paper">
-        <img id="myScissors" class="choices flipped" src="assets/images/scissors.png" alt="scissors">
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/game.js"></script>

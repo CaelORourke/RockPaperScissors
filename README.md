@@ -5,6 +5,7 @@ A game of rock, paper, scissors.
 - HTML
 - CSS
 - Javascript
+- Bootstrap
 - jQuery
 
 ## Contributors

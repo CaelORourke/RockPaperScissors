@@ -29,22 +29,24 @@ function compareChoices(playerChoice, computerChoice) {
     }
 }
 
-$(document).ready(function () {
-    var rock = $("#rock");
-    var paper = $("#paper");
-    var scissors = $("#scissors");
+function displayStats() {
+    $("#wins").text(wins);
+    $("#losses").text(losses);
+    $("#ties").text(ties);
+}
 
+$(document).ready(function () {
     // listen for keys that players type
     $(document).keyup(function (event) {
         keyPressed = event.key.toLowerCase();
-        console.log(keyPressed);
+        // console.log(keyPressed);
 
         $(".choices").css("display", "none");
 
         // we only care about "r", "p", "s"
         if (availableChoices.indexOf(keyPressed) > -1) {
             computerChoice = getRandomChoice();
-            console.log("computerChoice='" + computerChoice + "'");
+            // console.log("computerChoice='" + computerChoice + "'");
 
             switch (computerChoice) {
                 case 'r':
@@ -82,9 +84,10 @@ $(document).ready(function () {
                     break;
             }
 
-            console.log("wins=" + wins);
-            console.log("losses=" + losses);
-            console.log("ties=" + ties);
+            displayStats();
+            // console.log("wins=" + wins);
+            // console.log("losses=" + losses);
+            // console.log("ties=" + ties);
         }
     });
 });

@@ -5,3 +5,7 @@
 .flipped {
     transform: scale(-1, 1);
 }
+
+img { 
+    object-fit: contain;
+}
