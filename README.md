@@ -1,6 +1,8 @@
 # RockPaperScissors
 A game of rock, paper, scissors.
 
+Play the latest version at [https://caelorourke.github.io/RockPaperScissors/](https://caelorourke.github.io/RockPaperScissors/)
+
 ## Technologies Used
 - HTML
 - CSS
