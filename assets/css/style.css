@@ -1,3 +1,7 @@
-.rps {
+.choices {
     display: none;
+}
+
+.flipped {
+    transform: scale(-1, 1);
 }

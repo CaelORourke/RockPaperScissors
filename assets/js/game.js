@@ -30,15 +30,45 @@ function compareChoices(playerChoice, computerChoice) {
 }
 
 $(document).ready(function () {
+    var rock = $("#rock");
+    var paper = $("#paper");
+    var scissors = $("#scissors");
+
     // listen for keys that players type
     $(document).keyup(function (event) {
         keyPressed = event.key.toLowerCase();
         console.log(keyPressed);
 
+        $(".choices").css("display", "none");
+
         // we only care about "r", "p", "s"
         if (availableChoices.indexOf(keyPressed) > -1) {
             computerChoice = getRandomChoice();
             console.log("computerChoice='" + computerChoice + "'");
+
+            switch (computerChoice) {
+                case 'r':
+                    $("#rock").css("display", "block");
+                    break;
+                case 'p':
+                    $("#paper").css("display", "block");
+                    break;
+                case 's':
+                    $("#scissors").css("display", "block");
+                    break;
+            }
+
+            switch (keyPressed) {
+                case 'r':
+                    $("#myRock").css("display", "block");
+                    break;
+                case 'p':
+                    $("#myPaper").css("display", "block");
+                    break;
+                case 's':
+                    $("#myScissors").css("display", "block");
+                    break;
+            }
 
             switch (compareChoices(keyPressed, computerChoice)) {
                 case 1:
