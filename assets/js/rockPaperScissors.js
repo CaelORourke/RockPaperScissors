@@ -1,6 +1,8 @@
 const rockPaperScissors = (function () {
     let computerChoice = "";
 
+    let gameStarted = false;
+
     let wins = 0;
     let losses = 0;
     let ties = 0;
@@ -20,6 +22,9 @@ const rockPaperScissors = (function () {
     return {
         getAvailableChoices() {
             return availableChoices;
+        },
+        getGameStarted() {
+            return gameStarted;
         },
         getWins() {
             return wins;
@@ -54,6 +59,15 @@ const rockPaperScissors = (function () {
                 playerChoice: playerChoice,
                 computerChoice: computerChoice
             };
+        },
+        newGame() {
+            wins = 0;
+            losses = 0;
+            ties = 0;
+            gameStarted = false;
+        },
+        newRound() {
+            gameStarted = true;
         }
     };
 })();
