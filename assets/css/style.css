@@ -1,5 +1,6 @@
 .choices {
     display: none;
+    position: relative;
 }
 
 .flipped {

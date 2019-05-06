@@ -36,6 +36,14 @@ $(document).ready(function () {
 
                 let result = rockPaperScissors.compareChoices(keyPressed);
 
+                $("#rock").css({ left: "" });
+                $("#paper").css({ left: "" });
+                $("#scissors").css({ left: "" });
+
+                $("#myRock").css({ left: "" });
+                $("#myPaper").css({ left: "" });
+                $("#myScissors").css({ left: "" });
+
                 switch (result.computerChoice) {
                     case 'r':
                         $("#rock").css("display", "block");
@@ -60,7 +68,36 @@ $(document).ready(function () {
                         break;
                 }
 
+                if (result.hasComputerWon) {
+                    switch (result.computerChoice) {
+                        case 'r':
+                            $("#rock").animate({ left: '-250px' });
+                            break;
+                        case 'p':
+                            $("#paper").animate({ left: '-250px' });
+                            break;
+                        case 's':
+                            $("#scissors").animate({ left: '-250px' });
+                            break;
+                    }
+                }
+
+                if (result.hasPlayerWon) {
+                    switch (result.playerChoice) {
+                        case 'r':
+                            $("#myRock").animate({ left: '250px' });
+                            break;
+                        case 'p':
+                            $("#myPaper").animate({ left: '250px' });
+                            break;
+                        case 's':
+                            $("#myScissors").animate({ left: '250px' });
+                            break;
+                    }
+                }
+
                 displayStats();
+                newRound();
             }
         }
         else {

@@ -7,6 +7,9 @@ const rockPaperScissors = (function () {
     let losses = 0;
     let ties = 0;
 
+    let hasPlayerWon = false;
+    let hasComputerWon = false;
+
     const availableChoices = ["r", "p", "s"];
 
     const winRules = {
@@ -44,9 +47,11 @@ const rockPaperScissors = (function () {
                     ties++;
                 }
                 else if (winRules[playerChoice] === computerChoice) {
+                    hasPlayerWon = true;
                     wins++;
                 }
                 else {
+                    hasComputerWon = true;
                     losses++;
                 }
             }
@@ -56,6 +61,8 @@ const rockPaperScissors = (function () {
             // console.log("ties=" + ties);
 
             return {
+                hasPlayerWon: hasPlayerWon,
+                hasComputerWon: hasComputerWon,
                 playerChoice: playerChoice,
                 computerChoice: computerChoice
             };
@@ -67,6 +74,8 @@ const rockPaperScissors = (function () {
             gameStarted = false;
         },
         newRound() {
+            hasPlayerWon = false;
+            hasComputerWon = false;
             gameStarted = true;
         }
     };
