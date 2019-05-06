@@ -1,0 +1,59 @@
+const rockPaperScissors = (function () {
+    let computerChoice = "";
+
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
+
+    const availableChoices = ["r", "p", "s"];
+
+    const winRules = {
+        'r': 's',//rock beats scissors
+        'p': 'r',//paper beats rock
+        's': 'p'//scissors beats paper
+    };
+
+    function getRandomChoice() {
+        return (availableChoices[Math.floor(Math.random() * availableChoices.length)]);
+    };
+
+    return {
+        getAvailableChoices() {
+            return availableChoices;
+        },
+        getWins() {
+            return wins;
+        },
+        getLosses() {
+            return losses;
+        },
+        getTies() {
+            return ties;
+        },
+        compareChoices(playerChoice) {
+            if (availableChoices.indexOf(playerChoice) > -1) {
+                computerChoice = getRandomChoice();
+                // console.log("computerChoice='" + computerChoice + "'");
+    
+                if (playerChoice === computerChoice) {
+                    ties++;
+                }
+                else if (winRules[playerChoice] === computerChoice) {
+                    wins++;
+                }
+                else {
+                    losses++;
+                }
+            }
+
+            // console.log("wins=" + wins);
+            // console.log("losses=" + losses);
+            // console.log("ties=" + ties);
+
+            return {
+                playerChoice: playerChoice,
+                computerChoice: computerChoice
+            };
+        }
+    };
+})();
