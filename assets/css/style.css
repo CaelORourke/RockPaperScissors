@@ -1,3 +1,8 @@
+/* color theme by https://coolors.co/133c55-386fa4-59a5d8-84d2f6-91e5f6 */
+
+/* 91e5f6 */
+/* 59a5d8 */
+
 .choices {
     display: none;
     position: relative;
@@ -9,4 +14,17 @@
 
 img { 
     object-fit: contain;
+}
+
+.jumbotron {
+    background-color: #386fa4;
+    color: #84d2f6;
+}
+
+.card {
+    background-color: #133c55;
+}
+
+.card-text {
+    color: #84d2f6;
 }
